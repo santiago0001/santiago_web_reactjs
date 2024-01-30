@@ -1,5 +1,10 @@
-import { Box, Typography } from "@mui/material";
-import { ContainerMenu, ContainerNavbar } from "./Navbar.styled";
+import { Box, Grid, Link } from "@mui/material";
+import {
+  ButtonMenu,
+  ContainerMenu,
+  ContainerNavbar,
+  LinkHome,
+} from "./Navbar.styled";
 
 export default function Navbar() {
   return (
@@ -7,21 +12,27 @@ export default function Navbar() {
       <ContainerNavbar>
         <Box display={"flex"} alignItems={"center"} ml={2}>
           <Box sx={{ borderBottom: "5px solid" }}>
-            <Typography
-              fontSize={36}
-              fontWeight={700}
-              sx={{ letterSpacing: "-1px", lineHeight: 1.2 }}
-            >
+            <LinkHome href={"/"} fontSize={36} fontWeight={700}>
               Santiago Barzola
-            </Typography>
+            </LinkHome>
           </Box>
         </Box>
 
         <ContainerMenu>
-          <Box mr={4}>Estudios</Box>
-          <Box mr={4}>Experiencia</Box>
-          <Box mr={4}>Novedades</Box>
-          <Box mr={4}>Contacto</Box>
+          <Grid container spacing={4} mr={4}>
+            <Grid item>
+              <ButtonMenu href={"/estudios"}>Estudios</ButtonMenu>
+            </Grid>
+            <Grid item>
+              <ButtonMenu href={"/experiencia"}>Experiencia</ButtonMenu>
+            </Grid>
+            <Grid item>
+              <ButtonMenu href={"/novedades"}>Novedades</ButtonMenu>
+            </Grid>
+            <Grid item>
+              <ButtonMenu href={"/contacto"}>Contacto</ButtonMenu>
+            </Grid>
+          </Grid>
         </ContainerMenu>
       </ContainerNavbar>
     </>

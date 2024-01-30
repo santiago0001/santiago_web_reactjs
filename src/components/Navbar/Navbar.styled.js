@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Link } from "@mui/material";
 import styled from "styled-components";
 import { theme } from "../theme";
 
@@ -15,4 +15,16 @@ export const ContainerMenu = styled(Box)({
   alignItems: "flex-end",
   display: "flex",
   fontWeight: 600,
+});
+
+export const ButtonMenu = styled(Link)({
+  marginRight: 10,
+  cursor: "pointer",
+  textDecoration: "none !important",
+});
+
+export const LinkHome = styled(Link)({
+  letterSpacing: "-1px",
+  lineHeight: 1.2,
+  textDecoration: "none !important",
 });
