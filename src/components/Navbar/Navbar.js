@@ -12,6 +12,8 @@ import { theme } from "../theme";
 import MenuIcon from "@mui/icons-material/Menu";
 import { PopperMenuMobile } from "./PopperMenuMobile";
 import { useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
+import { routes } from "../../utils/paths";
 
 export default function Navbar() {
   const isMd = useMediaQuery(theme.breakpoints.down("md"));
@@ -26,11 +28,14 @@ export default function Navbar() {
     }
     setopenPopper(false);
   };
+  const location = useLocation();
+  const isHome = location?.pathname === routes?.home;
+
   return (
     <>
       <ContainerNavbar>
         <ContainerTitleWeb>
-          <ContainerLinkWeb>
+          <ContainerLinkWeb borderBottom={isHome}>
             <LinkHome href={"/"} fontSize={36} fontWeight={700}>
               Santiago Barzola
             </LinkHome>

@@ -46,9 +46,9 @@ export const ContainerTitleWeb = styled(Box)({
     height: "100%",
   },
 });
-export const ContainerLinkWeb = styled(Box)({
-  borderBottom: "5px solid",
-});
+export const ContainerLinkWeb = styled(Box)(({ borderBottom }) => ({
+  borderBottom: borderBottom ? "5px solid" : "5px solid white",
+}));
 
 export const BoxMenuMobile = styled(Box)(({ borderBottom }) => ({
   backgroundColor: theme.palette.common.white,
