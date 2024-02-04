@@ -36,3 +36,18 @@ export const LinkHome = styled(Link)({
     fontSize: "8vw !important",
   },
 });
+
+export const ContainerTitleWeb = styled(Box)({
+  placeContent: "center",
+  display: "flex",
+  alignItems: "center",
+  marginLeft: theme.spacing(2),
+  marginBottom: theme.spacing(2),
+  [theme.breakpoints.down("md")]: {
+    width: "80%",
+    height: "100%",
+  },
+});
+export const ContainerLinkWeb = styled(Box)({
+  borderBottom: "5px solid",
+});

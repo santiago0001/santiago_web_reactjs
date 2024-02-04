@@ -4,6 +4,8 @@ import {
   ContainerMenu,
   ContainerNavbar,
   LinkHome,
+  ContainerTitleWeb,
+  ContainerLinkWeb,
 } from "./Navbar.styled";
 import { theme } from "../theme";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -13,19 +15,13 @@ export default function Navbar() {
   return (
     <>
       <ContainerNavbar>
-        <Box
-          display={"flex"}
-          alignItems={"center"}
-          ml={2}
-          mb={2}
-          sx={{ width: "80%", placeContent: "center" }}
-        >
-          <Box sx={{ borderBottom: "5px solid" }}>
+        <ContainerTitleWeb>
+          <ContainerLinkWeb>
             <LinkHome href={"/"} fontSize={36} fontWeight={700}>
               Santiago Barzola
             </LinkHome>
-          </Box>
-        </Box>
+          </ContainerLinkWeb>
+        </ContainerTitleWeb>
         {!isMd && (
           <ContainerMenu>
             <Grid container spacing={4} mr={4}>
