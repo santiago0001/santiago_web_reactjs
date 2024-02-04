@@ -4,6 +4,9 @@ export const theme = createTheme({
   palette: {
     primary: {
       main: "#4793DF",
+      common:{
+        white:"white"
+      }
     },
   },
   breakpoints: {

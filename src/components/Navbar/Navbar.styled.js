@@ -10,8 +10,6 @@ export const ContainerNavbar = styled(Box)({
   color: theme.palette.primary.main,
   [theme.breakpoints.down("md")]: {
     justifyContent: "center",
-
-    // position: "relative",
   },
 });
 
@@ -51,3 +49,30 @@ export const ContainerTitleWeb = styled(Box)({
 export const ContainerLinkWeb = styled(Box)({
   borderBottom: "5px solid",
 });
+
+export const BoxMenuMobile = styled(Box)(({ borderBottom }) => ({
+  backgroundColor: theme.palette.common.white,
+  width: "100%",
+  height: 50,
+  borderTop: `1px solid ${theme.palette.primary.main}`,
+  display: "flex",
+  alignItems: "center",
+  textAlign: "center",
+  borderBottom: borderBottom ? `1px solid ${theme.palette.primary.main}` : "",
+  justifyContent: "center",
+  fontWeight: 600,
+  fontSize: 18,
+}));
+
+export const ButtonMenuMobile = styled(Link)({
+  marginRight: 10,
+  textDecoration: "none !important",
+  width: "100%",
+});
+
+export const BoxMenuIcon = styled(Box)(() => ({
+  display: "flex",
+  height: 80,
+  width: 50,
+  alignItems: "center",
+}));

@@ -1,4 +1,4 @@
-import { Box, Grid, useMediaQuery } from "@mui/material";
+import { Grid, useMediaQuery } from "@mui/material";
 import {
   ButtonMenu,
   ContainerMenu,
@@ -6,12 +6,26 @@ import {
   LinkHome,
   ContainerTitleWeb,
   ContainerLinkWeb,
+  BoxMenuIcon,
 } from "./Navbar.styled";
 import { theme } from "../theme";
 import MenuIcon from "@mui/icons-material/Menu";
+import { PopperMenuMobile } from "./PopperMenuMobile";
+import { useRef, useState } from "react";
 
 export default function Navbar() {
   const isMd = useMediaQuery(theme.breakpoints.down("md"));
+  const [openPopper, setopenPopper] = useState(false);
+  const anchorRef = useRef(null);
+  const handleClick = () => {
+    setopenPopper(!openPopper);
+  };
+  const handleClose = (event) => {
+    if (anchorRef?.current && anchorRef?.current?.contains(event.target)) {
+      return;
+    }
+    setopenPopper(false);
+  };
   return (
     <>
       <ContainerNavbar>
@@ -41,20 +55,18 @@ export default function Navbar() {
           </ContainerMenu>
         )}
         {isMd && (
-          <Box
-            sx={{
-              // position: "absolute",
-              // right: 0,
-              display: "flex",
-              height: 80,
-              width: 50,
-              alignItems: "center",
-            }}
-          >
+          <BoxMenuIcon onClick={handleClick} ref={anchorRef}>
             <MenuIcon fontSize={"large"} />
-          </Box>
+          </BoxMenuIcon>
         )}
       </ContainerNavbar>
+      {isMd && (
+        <PopperMenuMobile
+          open={openPopper}
+          anchorEl={anchorRef}
+          handleClose={handleClose}
+        />
+      )}
     </>
   );
 }
