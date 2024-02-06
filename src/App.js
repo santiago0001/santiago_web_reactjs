@@ -7,6 +7,7 @@ import { Studies } from "./components/Studies/Studies";
 import { Experience } from "./components/Experience/Experience";
 import { News } from "./components/News/News";
 import { Contact } from "./components/Contact/Contact";
+import { Footer } from "./components/Footer/Footer";
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
             <Route path="/novedades" element={<News />} />
             <Route path="/contacto" element={<Contact />} />
           </Routes>
+          <Footer />
         </div>
       </Router>
     </ThemeProvider>

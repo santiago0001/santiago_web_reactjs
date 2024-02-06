@@ -1,8 +1,10 @@
 import { Box, Link } from "@mui/material";
 import styled from "styled-components";
 import { theme } from "../theme";
+import { Z_INDEX } from "../../utils/constants";
 
 export const ContainerNavbar = styled(Box)({
+  position: "relative",
   display: "flex",
   justifyContent: "space-between",
   boxShadow: "-3px 13px 20px -8px rgba(0,0,0,0.16)",
@@ -11,6 +13,7 @@ export const ContainerNavbar = styled(Box)({
   [theme.breakpoints.down("md")]: {
     justifyContent: "center",
   },
+  zIndex: Z_INDEX?.MEDIUM,
 });
 
 export const ContainerMenu = styled(Box)({
