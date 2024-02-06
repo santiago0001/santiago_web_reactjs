@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import React from "react";
 import { theme } from "../../theme";
 import {
@@ -20,7 +20,7 @@ export const Trajectory = () => {
       >
         Trayectoria
       </Typography>
-      <ContainerItemsTrayectory>
+      <ContainerItemsTrayectory pb={10}>
         <BoxTrayectoryItem>
           <img
             height={120}

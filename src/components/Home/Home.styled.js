@@ -18,17 +18,29 @@ export const ContainerHome = styled(Container)(() => ({
 export const ContainerItemsTrayectory = styled(Box)(() => ({
   display: "flex",
   justifyContent: "space-between",
+  [theme.breakpoints.down("md")]: {
+    flexDirection: "column",
+    alignItems: "center",
+  },
 }));
 
 export const BoxTrayectoryItem = styled(Box)(() => ({
   textAlign: "center",
+  backgroundColor: theme.palette.common.white,
+  width: 250,
+  borderRadius: 20,
+  [theme.breakpoints.down("md")]: {
+    marginBottom: 30,
+  },
 }));
 
 export const BoxTrayectoryTitle = styled(Box)(() => ({
   fontWeight: 700,
   fontSize: 28,
+  paddingBottom: 20,
 }));
 export const BoxLogoArsat = styled(Box)(() => ({
   alignItems: "center",
   display: "flex",
+  placeContent: "center",
 }));
