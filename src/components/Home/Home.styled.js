@@ -29,6 +29,7 @@ export const BoxTrayectoryItem = styled(Box)(() => ({
   backgroundColor: theme.palette.common.white,
   width: 250,
   borderRadius: 20,
+  boxShadow: "-1px 0px 13px -4px rgba(0,0,0,0.75)",
   [theme.breakpoints.down("md")]: {
     marginBottom: 30,
   },
