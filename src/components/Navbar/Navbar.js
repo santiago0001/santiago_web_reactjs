@@ -29,13 +29,15 @@ export default function Navbar() {
     setopenPopper(false);
   };
   const location = useLocation();
-  const isHome = location?.pathname === routes?.home;
+  const getIsRoute = (route) => {
+    return location?.pathname === route;
+  };
 
   return (
     <>
       <ContainerNavbar>
         <ContainerTitleWeb>
-          <ContainerLinkWeb borderBottom={isHome}>
+          <ContainerLinkWeb borderBottom={getIsRoute(routes?.home)}>
             <LinkHome href={"/"} fontSize={36} fontWeight={700}>
               Santiago Barzola
             </LinkHome>
@@ -45,16 +47,33 @@ export default function Navbar() {
           <ContainerMenu>
             <Grid container spacing={4} mr={4}>
               <Grid item>
-                <ButtonMenu href={"/estudios"}>Estudios</ButtonMenu>
+                <ButtonMenu
+                  href={routes?.studies}
+                  bt={getIsRoute(routes?.studies)}
+                >
+                  Estudios
+                </ButtonMenu>
               </Grid>
               <Grid item>
-                <ButtonMenu href={"/experiencia"}>Experiencia</ButtonMenu>
+                <ButtonMenu
+                  href={routes?.trayectory}
+                  bt={getIsRoute(routes?.trayectory)}
+                >
+                  Experiencia
+                </ButtonMenu>
               </Grid>
               <Grid item>
-                <ButtonMenu href={"/novedades"}>Novedades</ButtonMenu>
+                <ButtonMenu href={routes?.news} bt={getIsRoute(routes?.news)}>
+                  Novedades
+                </ButtonMenu>
               </Grid>
               <Grid item>
-                <ButtonMenu href={"/contacto"}>Contacto</ButtonMenu>
+                <ButtonMenu
+                  href={routes?.contact}
+                  bt={getIsRoute(routes?.contact)}
+                >
+                  Contacto
+                </ButtonMenu>
               </Grid>
             </Grid>
           </ContainerMenu>

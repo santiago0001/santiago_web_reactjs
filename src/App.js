@@ -8,6 +8,7 @@ import { Experience } from "./components/Experience/Experience";
 import { News } from "./components/News/News";
 import { Contact } from "./components/Contact/Contact";
 import { Footer } from "./components/Footer/Footer";
+import { routes } from "./utils/paths";
 
 export default function App() {
   return (
@@ -16,11 +17,11 @@ export default function App() {
         <div>
           <Navbar />
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/estudios" element={<Studies />} />
-            <Route path="/experiencia" element={<Experience />} />
-            <Route path="/novedades" element={<News />} />
-            <Route path="/contacto" element={<Contact />} />
+            <Route path={routes?.home} element={<Home />} />
+            <Route path={routes?.studies} element={<Studies />} />
+            <Route path={routes?.trayectory} element={<Experience />} />
+            <Route path={routes?.news} element={<News />} />
+            <Route path={routes?.contact} element={<Contact />} />
           </Routes>
           <Footer />
         </div>

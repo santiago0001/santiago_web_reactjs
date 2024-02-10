@@ -23,11 +23,15 @@ export const ContainerMenu = styled(Box)({
   fontWeight: 600,
 });
 
-export const ButtonMenu = styled(Link)({
+export const ButtonMenu = styled(Link)(({ bt }) => ({
   marginRight: 10,
   cursor: "pointer",
-  textDecoration: "none !important",
-});
+  textDecoration: bt ? "underline solid red" : "none !important",
+  textDecorationThickness: "4px !important",
+  textDecorationColor: `${theme.palette.primary.main} !important`,
+  textDecorationSkipInk: "none",
+  textUnderlinePosition: "under",
+}));
 
 export const LinkHome = styled(Link)({
   letterSpacing: "-1px",
