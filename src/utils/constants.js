@@ -3,3 +3,7 @@ export const Z_INDEX = {
   MEDIUM: 2,
   HIGH: 3,
 };
+
+export const STUDIES_ICONS = {
+  school: "school",
+};
