@@ -7,8 +7,9 @@ import {
   ContainerImgFooter,
 } from "./Footer.style";
 import { theme } from "../theme";
-import { Box, Typography } from "@mui/material";
+import { Box, Link } from "@mui/material";
 import { ButtonMenu } from "../Navbar/Navbar.styled";
+import { routes } from "../../utils/paths";
 
 export const Footer = () => {
   return (
@@ -21,30 +22,41 @@ export const Footer = () => {
     >
       <ContainerFooter>
         <BoxLeftFooter>
-          <Typography
+          <Link
+            href={"/"}
             fontWeight={800}
             color={theme.palette.primary.main}
-            fontSize={{ xs: "5vw", sm: 21, md: 35 }}
-            mt={{ xs: 5, sm: 0 }}
+            fontSize={{ xs: "7vw", sm: 30, md: 40 }}
+            sx={{ textDecoration: "none" }}
           >
-            santiagolucasbarzola.com.ar
-          </Typography>
+            santiagobarzola.com.ar
+          </Link>
           <Box mt={4} display={"flex"} justifyContent={"center"}>
             <ContainerImgFooter>
-              <Box width={{ xs: 40, md: 80 }}>
+              <Link
+                rel="noopener noreferrer"
+                target="_blank"
+                href={routes.linkedin}
+                width={{ xs: 40, md: 80 }}
+              >
                 <img
                   width={"100%"}
                   src="./images/Footer/linkedlin.svg"
                   alt="Ejemplo"
                 />
-              </Box>
-              <Box width={{ xs: 45, md: 90 }}>
+              </Link>
+              <Link
+                rel="noopener noreferrer"
+                target="_blank"
+                href={routes.mailTo}
+                width={{ xs: 45, md: 90 }}
+              >
                 <img
                   width={"100%"}
                   src="./images/Footer/email.svg"
                   alt="Ejemplo"
                 />
-              </Box>
+              </Link>
             </ContainerImgFooter>
           </Box>
         </BoxLeftFooter>

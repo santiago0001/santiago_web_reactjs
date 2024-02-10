@@ -18,6 +18,7 @@ export const BoxLeftFooter = styled(Box)(() => ({
   textAlign: "center",
   [theme.breakpoints.down("sm")]: {
     width: "100%",
+    marginTop: 20,
   },
 }));
 
