@@ -62,19 +62,19 @@ export default function Navbar() {
                   Experiencia
                 </ButtonMenu>
               </Grid>
-              <Grid item>
+              {/* <Grid item>
                 <ButtonMenu href={routes?.news} bt={getIsRoute(routes?.news)}>
                   Novedades
                 </ButtonMenu>
-              </Grid>
-              <Grid item>
+              </Grid> */}
+              {/* <Grid item>
                 <ButtonMenu
                   href={routes?.contact}
                   bt={getIsRoute(routes?.contact)}
                 >
                   Contacto
                 </ButtonMenu>
-              </Grid>
+              </Grid> */}
             </Grid>
           </ContainerMenu>
         )}
